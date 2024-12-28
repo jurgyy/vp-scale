@@ -1,6 +1,6 @@
 {
   "name": "vp-scale",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "title": "Visible Planets Scale",
   "author": "jurgy",
   "homepage": "https://github.com/jurgyy/vp-scale",
@@ -8,7 +8,7 @@
   "factorio_version": "2.0",
   "dependencies": [
     "base",
-    "visible-planets >= 1.2.11" 
+    "visible-planets >= 1.2.11"
   ],
   "quality_required": false,
   "rail_bridges_required": false,
