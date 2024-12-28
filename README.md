@@ -1,9 +1,9 @@
 [![Release](https://github.com/jurgyy/vp-scale/actions/workflows/release.yml/badge.svg?branch=main)](https://github.com/jurgyy/vp-scale/actions/workflows/release.yml)
 
-A small mod for [Factorio: Space Age](https://factorio.com/) to enhance the mod [Visible Planets in Space](https://mods.factorio.com/mod/visible-planets) by adjusting the scale of individual planets base on their gravity.
+A small mod for [Factorio: Space Age](https://factorio.com/) to enhance the mod [Visible Planets in Space](https://mods.factorio.com/mod/visible-planets) by adjusting the scale of individual planets based on their gravity.
 
 Automatically works for modded planets and mods that adjust the gravity of any given planet. If Nauvis' gravity is adjusted, its scale will still be 1 which means other planets will shrink or grow relative to it.
-This mod's scale is an aditional multiplier independent of Visible Planets's "Planet final scale" map setting. In other words, adjusting the setting scales all planets while keeping this mod's individual adjustments.
+This mod's scale is an aditional multiplier independent of Visible Planets' "Planet final scale" map setting. In other words, adjusting the setting scales all planets while keeping this mod's individual adjustments.
 
 # Relative scale
 
