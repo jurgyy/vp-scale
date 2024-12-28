@@ -18,4 +18,4 @@ Here's an overview of the relative scale of the different planets:
 | Aquilo   | 1.144  |
 | Cerys*   | 0.215  |
 
-\* Example for modded planets. [Cerys](https://mods.factorio.com/mod/Cerys-Moon-of-Fulgora) is a modded moon of Fulgore and, as expected, is rendered much smaller than the full sized planets.
+\* Example for modded planets. [Cerys](https://mods.factorio.com/mod/Cerys-Moon-of-Fulgora) is a modded moon of Fulgora and, as expected, is rendered much smaller than the full sized planets.
