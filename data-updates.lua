@@ -20,7 +20,11 @@ end
 ---@param planet data.PlanetPrototype
 ---@return number
 local function get_gravity(planet)
-    return planet.surface_properties["gravity"] or 10
+    local surface_properties = planet.surface_properties
+    if surface_properties  then
+        return surface_properties["gravity"] or 10
+    end
+    return 10
 end
 
 local g_nauvis = get_gravity(nauvis)
