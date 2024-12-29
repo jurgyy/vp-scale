@@ -58,8 +58,19 @@ local function get_planet_scale(planet)
     return get_radius(v_planet)
 end
 
+local min_scale = settings.startup["vp-scale-min"].value
+local max_scale = settings.startup["vp-scale-max"].value
+---@cast min_scale double
+---@cast max_scale double
+
 for _, planet in pairs(data.raw.planet) do
     local scale = get_planet_scale(planet)
+    if scale < min_scale then
+        scale = min_scale
+    elseif scale > max_scale then
+        scale = max_scale
+    end
+
     log("Setting scale of planet " .. planet.name .. " to: " .. tostring(scale))
 
     ---@diagnostic disable-next-line: undefined-global
