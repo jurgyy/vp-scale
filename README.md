@@ -23,3 +23,7 @@ Here's an overview of the relative scale of the different planets:
 # Realism
 
 As mentioned in [one of the discussion pages](https://mods.factorio.com/mod/vp-scale/discussion/67707729f934f2a791830ebd) this mod isn't really realisitc. From a fuel efficiency point of view, space platforms usually want to be as close to the planet as possible which means from the point of the view of the platform the planet would fill up your entire field of view. However if you'd like some visual cue for the size of the planet, or just some more distinction between the planets, this is the mod for you!
+
+# For other modders
+
+Are you manually setting the scale yourself, or are you creating a black hole with a huge gravitational pull or a cloud formation with hardly any and you don't want your sprites to scale? Add the desired planet(s) to the blacklist by calling `vp_scale_add_planets_to_scale_blacklist({"vulcanus", "gleba"})` in your data stage. Just replace Vulcanus and Gleba with your own `PlanetPrototype.name` names.
