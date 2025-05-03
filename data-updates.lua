@@ -64,9 +64,15 @@ local max_scale = settings.startup["vp-scale-max"].value
 ---@cast max_scale double
 
 local blacklist = vp_scale_get_planet_scale_blacklist()
+---@diagnostic disable-next-line: undefined-global
+local overrides = vp_get_planet_overrides()
 for _, planet in pairs(data.raw.planet) do
     if blacklist[planet.name] then
-        log("Skipping setting scale for " .. planet.name)
+        log("Skipping setting scale for blacklisted " .. planet.name)
+        goto continue
+    end
+    if overrides[planet.name] then
+        log("Skipping setting scale for overriden " .. planet.name)
         goto continue
     end
 
