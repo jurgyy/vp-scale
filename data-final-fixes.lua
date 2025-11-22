@@ -9,7 +9,9 @@ local overrides = vp_get_planet_overrides()
 
 local starmap_name_map = {}
 for name, planet in pairs(data.raw.planet) do
-  starmap_name_map[planet.starmap_icon] = planet
+  if planet.starmap_icon then
+    starmap_name_map[planet.starmap_icon] = planet
+  end
 end
 
 local min_scale = settings.startup["vp-scale-min-moon"].value
