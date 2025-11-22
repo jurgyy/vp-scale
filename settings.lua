@@ -16,3 +16,24 @@ data:extend({
         maximum_value = 20
     }
 })
+
+if mods["PlanetsLib"] then
+    data:extend({
+        {
+            type = "double-setting",
+            name = "vp-scale-min-moon",
+            setting_type = "startup",
+            default_value = 0.05,
+            minimum_value = 0.01,
+            maximum_value = 1
+        },
+        {
+            type = "double-setting",
+            name = "vp-scale-max-moon",
+            setting_type = "startup",
+            default_value = 2.5,
+            minimum_value = 1,
+            maximum_value = 5
+        },
+    })
+end
