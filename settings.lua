@@ -14,6 +14,12 @@ data:extend({
         default_value = 5,
         minimum_value = 0.1,
         maximum_value = 20
+    },
+    {
+        type = "bool-setting",
+        name = "vp-scale-enable-rotation-multiplier",
+        setting_type = "startup",
+        default_value = true
     }
 })
 

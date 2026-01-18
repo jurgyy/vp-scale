@@ -5,18 +5,20 @@ A small mod for [Factorio: Space Age](https://factorio.com/) to enhance the mod 
 Automatically works for modded planets and mods that adjust the gravity of any given planet but doesn't override the scaling set by other mods in case a planet mod configured its own scaling. If Nauvis' gravity is adjusted, its scale will still be 1 which means other planets will shrink or grow relative to it.
 This mod's scale is an additional multiplier independent of Visible Planets' "Planet final scale" map setting. In other words, adjusting the setting scales all planets while keeping this mod's individual adjustments.
 
+As of version 1.4 this mod also adjusts the rotation speed of the planet based on their day/night cycle durations. Nauvis' day/night cylce is used as reference and its rotation speed matches your game's Visible Planets Rotation Speed setting, every other body is scaled relative to this. If you don't like this behavior you can turn it off by turning off the `Day/Night Cyle rotation speed adjustment` startup setting.
+
 # Relative scale
 
 Here's an overview of the relative scale of the different planets:
 
-| Planet   | Gravity | Scale  |
-| -------- | ------- | ------ |
-| Nauvis   | 10      | 1      |
-| Vulcanus | 40      | 1.587  |
-| Gleba    | 20      | 1.259  |
-| Fulgora  | 8       | 0.928  |
-| Aquilo   | 15      | 1.144  |
-| Cerys*   | 0.15    | 0.215  |
+| Planet   | Gravity | Scale  | Rotation multiplier |
+| -------- | ------- | ------ | ------------------- |
+| Nauvis   | 10      | 1      | 1                   |
+| Vulcanus | 40      | 1.587  | 4.667               |
+| Gleba    | 20      | 1.259  | 0.7                 |
+| Fulgora  | 8       | 0.928  | 2.333               |
+| Aquilo   | 15      | 1.144  | 0.35                |
+| Cerys*   | 0.15    | 0.215  | 1.167               |
 
 \* Example for modded planets. [Cerys](https://mods.factorio.com/mod/Cerys-Moon-of-Fulgora) is a modded moon of Fulgora and, as expected, is rendered much smaller than the full sized planets.
 

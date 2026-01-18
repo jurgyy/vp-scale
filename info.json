@@ -4,7 +4,7 @@
   "title": "Visible Planets Scale",
   "author": "jurgy",
   "homepage": "https://github.com/jurgyy/vp-scale",
-  "description": "Adds automatic scaling to planets rendered by Visible Planets in Space based on their gravity",
+  "description": "Adds automatic scaling to planets rendered by Visible Planets in Space based on their gravity and increases or reduces the rotation speed based on their day/night cycle duration.",
   "factorio_version": "2.0",
   "dependencies": [
     "base",

@@ -1,4 +1,5 @@
 local get_planet_scale = require("get_scale")
+local get_planet_rotation_speed = require("get_rotation")
 
 local min_scale = settings.startup["vp-scale-min"].value
 local max_scale = settings.startup["vp-scale-max"].value
@@ -31,6 +32,18 @@ for _, planet in pairs(data.raw.planet) do
 
     ---@diagnostic disable-next-line: undefined-global
     vp_override_planet_scale(planet.name, scale)
-
     ::continue::
+end
+
+if settings.startup["vp-scale-enable-rotation-multiplier"].value then
+    log("Setting planet rotation multipliers based on day/night cycle durations")
+    for _, planet in pairs(data.raw.planet) do
+        local mult = get_planet_rotation_speed(planet)
+        log("Setting rotation multiplier of planet " .. planet.name .. " to: " .. tostring(mult))
+
+        ---@diagnostic disable-next-line: undefined-global
+        vp_set_planet_rotation_mult(planet.name, mult)
+    end
+else
+    log("Planet rotation multipliers based on day/night cycle durations are disabled")
 end
