@@ -8,7 +8,7 @@
   "factorio_version": "2.0",
   "dependencies": [
     "base",
-    "visible-planets >= 1.2.11"
+    "visible-planets >= 1.7.0"
   ],
   "quality_required": false,
   "rail_bridges_required": false,
