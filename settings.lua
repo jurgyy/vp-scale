@@ -1,5 +1,13 @@
 data:extend({
     {
+        type = "int-setting",
+        name = "vp-scale-nauvis-size",
+        setting_type = "startup",
+        default_value = 600,
+        minimum_value = 50,
+        maximum_value = 5000
+    },
+    {
         type = "double-setting",
         name = "vp-scale-min",
         setting_type = "startup",
@@ -11,7 +19,7 @@ data:extend({
         type = "double-setting",
         name = "vp-scale-max",
         setting_type = "startup",
-        default_value = 5,
+        default_value = 10,
         minimum_value = 0.1,
         maximum_value = 20
     },
@@ -22,24 +30,3 @@ data:extend({
         default_value = true
     }
 })
-
-if mods["PlanetsLib"] then
-    data:extend({
-        {
-            type = "double-setting",
-            name = "vp-scale-min-moon",
-            setting_type = "startup",
-            default_value = 0.05,
-            minimum_value = 0.01,
-            maximum_value = 1
-        },
-        {
-            type = "double-setting",
-            name = "vp-scale-max-moon",
-            setting_type = "startup",
-            default_value = 2.5,
-            minimum_value = 1,
-            maximum_value = 5
-        },
-    })
-end

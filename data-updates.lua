@@ -1,49 +1,48 @@
 local get_planet_scale = require("get_scale")
-local get_planet_rotation_speed = require("get_rotation")
 
-local min_scale = settings.startup["vp-scale-min"].value
-local max_scale = settings.startup["vp-scale-max"].value
----@cast min_scale double
----@cast max_scale double
+local nauvis_size = settings.startup["vp-scale-nauvis-size"].value --[[@as int]]
+local min_scale = settings.startup["vp-scale-min"].value --[[@as double]]
+local max_scale = settings.startup["vp-scale-max"].value --[[@as double]]
 
-local blacklist = vp_scale_get_planet_scale_blacklist()
----@diagnostic disable-next-line: undefined-global
-local overrides = vp_get_planet_overrides()
-for _, planet in pairs(data.raw.planet) do
-    if blacklist[planet.name] then
-        log("Skipping setting scale for blacklisted " .. planet.name)
-        goto continue
-    end
-    if overrides[planet.name] then
-        log("Skipping setting scale for overriden " .. planet.name)
-        goto continue
-    end
-
-    local scale = get_planet_scale(planet)
+for name, prototype in pairs(data.raw.planet) do
+    local backdrop = (prototype.platform_surface_render_parameters and prototype.platform_surface_render_parameters.platform_backdrop)
+    if not backdrop then goto continue end
+    
+    local radius =  backdrop.radius
+    if not radius then goto continue end
+    
+    local scale = get_planet_scale(prototype)
     if scale < min_scale then
         scale = min_scale
-        log("Minimum clamping scale of planet " .. planet.name .. " to: " .. tostring(scale))
+        log("Minimum clamping scale of planet " .. name .. " to: " .. tostring(scale))
     elseif scale > max_scale then
         scale = max_scale
-        log("Maximum clamping scale of planet " .. planet.name .. " to: " .. tostring(scale))
+        log("Maximum clamping scale of planet " .. name .. " to: " .. tostring(scale))
     end
+    
+    local new_radius = nauvis_size * scale
+    
+    log("Setting " .. name .. " radius from " .. radius .. " to " .. new_radius .. " (x " .. scale .. ")")
+    backdrop.radius = new_radius
 
-    log("Setting scale of planet " .. planet.name .. " to: " .. tostring(scale))
-
-    ---@diagnostic disable-next-line: undefined-global
-    vp_override_planet_scale(planet.name, scale)
     ::continue::
 end
 
 if settings.startup["vp-scale-enable-rotation-multiplier"].value then
-    log("Setting planet rotation multipliers based on day/night cycle durations")
-    for _, planet in pairs(data.raw.planet) do
-        local mult = get_planet_rotation_speed(planet)
-        log("Setting rotation multiplier of planet " .. planet.name .. " to: " .. tostring(mult))
+    local get_planet_rotation_speed = require("get_rotation")
 
-        ---@diagnostic disable-next-line: undefined-global
-        vp_set_planet_rotation_mult(planet.name, mult)
+    for name, prototype in pairs(data.raw.planet) do
+        local backdrop = (prototype.platform_surface_render_parameters and prototype.platform_surface_render_parameters.platform_backdrop)
+        if not backdrop then goto continue end
+        if not backdrop.rotation_seconds then goto continue end
+        
+        local rotation_multiplier = get_planet_rotation_speed(prototype)
+        local new_rotation_seconds = backdrop.rotation_seconds * rotation_multiplier
+        log ("Setting " .. name .. " rotation time from " .. backdrop.rotation_seconds .. " to " .. new_rotation_seconds .. " (x " .. rotation_multiplier .. ")")
+        backdrop.rotation_seconds = new_rotation_seconds
+        
+        ::continue::
     end
 else
-    log("Planet rotation multipliers based on day/night cycle durations are disabled")
+    log("Rotation multiplier disabled, skipping rotation speed adjustments")
 end
