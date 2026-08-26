@@ -34,6 +34,27 @@ So Gleba should be rendered 26% bigger than Nauvis.
 
 As mentioned in [one of the discussion pages](https://mods.factorio.com/mod/vp-scale/discussion/67707729f934f2a791830ebd) this mod isn't really realisitc. From a fuel efficiency point of view, space platforms usually want to be as close to the planet as possible which means from the point of the view of the platform the planet would fill up your entire field of view. However if you'd like some visual cue for the size of the planet, or just some more distinction between the planets, this is the mod for you!
 
+# Settings
+
+| Setting                                   | Description                               |
+|-------------------------------------------|-------------------------------------------|
+| Day/Night Cycle rotation speed adjustment | Enable/Disable rotation speed adjustment. |
+| Size of Nauvis                            | The size of the planet Nauvis. This is used as a reference for scaling other planets based on their gravity. Increase this value if you want to make planets appear bigger or closer to the spaceships. See bellow for a comparison. |
+| Minimum planet scale                      | The minimum scale multiplier relative to Nauvis for a planet with very little gravity to prevent them from getting too small.  |
+| Maximum planet scale                      | The maximum scale multiplier relative to Nauvis for a planet with very high ravity. |
+
+### Nauvis at Default 600 Size
+![Nauvis at Default 600 size](./pictures/comparison/Nauvis-600.png "Nauvis Size 600")
+
+### Nauvis at 900 Size
+![Nauvis at 900 size](./pictures/comparison/Nauvis-900.png "Nauvis Size 900")
+
+### Vulcanus at Default 600 Size
+![Vulcanus at default 600 size](./pictures/comparison/Vulcanus-600.png "Vulcanus Size 600")
+
+### Vulcanus at 900 Size
+![Vulcanus at 900 size](./pictures/comparison/Vulcanus-900.png "Vulcanus Size 900")
+
 # Factorio 2.0
 
 The 2.0 version was build on top of [Visible Planets in Space](https://mods.factorio.com/mod/visible-planets).
