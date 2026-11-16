@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.5.1
+Date: 2026-11-16
+  Bugfixes:
+    - Added Space Age as required dependency as to prevent cryptic error when it is not enabled.
+---------------------------------------------------------------------------------------------------
 Version: 1.5.0
 Date: 2026-08-25
   Features:
