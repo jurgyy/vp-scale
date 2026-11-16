@@ -21,8 +21,8 @@ for name, prototype in pairs(data.raw.planet) do
     end
     
     local new_radius = nauvis_size * scale
-    
-    log("Setting " .. name .. " radius from " .. radius .. " to " .. new_radius .. " (x " .. scale .. ")")
+    local increase = new_radius / radius
+    log("Setting " .. name .. " radius from " .. radius .. " to " .. new_radius .. " (increase: " .. increase .. " | Nauvis x " .. scale .. ")")
     backdrop.radius = new_radius
 
     ::continue::
