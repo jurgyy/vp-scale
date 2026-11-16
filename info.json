@@ -7,11 +7,12 @@
   "description": "Adds automatic size and rotation speed scaling to planet backdrops based on their gravity and day/night cycle duration.",
   "factorio_version": "2.1",
   "dependencies": [
-    "base"
+    "base",
+    "space-age"
   ],
   "quality_required": false,
   "rail_bridges_required": false,
-  "space_travel_required": true,
+  "space_travel_required": false,
   "spoiling_required": false,
   "freezing_required": false,
   "segmented_units_required": false,
